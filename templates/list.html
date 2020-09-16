@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do App</title>
+    <!-- <link rel="stylesheet" type="text/css" href="style.css" /> -->
+  </head>
+  <body>
+    <style>
+      body {
+        background-color: #303030;
+        text-align: center;
+      }
+
+      .label {
+        color: beige;
+      }
+
+      .i-field {
+        width: auto;
+        height: 1.6rem;
+      }
+
+      .btn {
+        appearance: none;
+        outline: 0;
+        background-color: white;
+        border: 0;
+        padding: 10px 15px;
+        color: #300330;
+        border-radius: 3px;
+        width: auto;
+        cursor: pointer;
+        font-size: 18px;
+        transition-duration: 0.25s;
+      }
+
+      .btn:hover {
+        background-color: rgb(245, 247, 249);
+      }
+
+      .list {
+        max-width: 400px;
+        margin: auto;
+        padding: auto;
+      }
+    </style>
+    <div class="label">
+      <h1>TODO App...</h1>
+      <form action="/task" method="post">
+        <p>
+          <input
+            class="i-field"
+            type="text"
+            name="content"
+            autocomplete="off"
+            placeholder="Enter your task..."
+          />
+        </p>
+        <input class="btn" type="submit" value="Add Task" />
+      </form>
+
+      <ol class="list">
+        {% for task in tasks %}
+        <li>
+          {% if task.done %}
+          <strike> {% endif %}{{ task.content }} {% if task.done %} </strike>{%
+          endif %}
+          <a href="/done/{{ task.id }}">Done</a>
+          <a href="/delete/{{ task.id }}">Delete</a>
+        </li>
+        {% endfor %}
+      </ol>
+    </div>
+  </body>
+</html>

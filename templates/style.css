@@ -1,0 +1,37 @@
+body {
+  background-color: #303030;
+  text-align: center;
+}
+
+.label {
+  color: beige;
+}
+
+.i-field {
+  width: auto;
+  height: 1.6rem;
+}
+
+.btn {
+  appearance: none;
+  outline: 0;
+  background-color: white;
+  border: 0;
+  padding: 10px 15px;
+  color: #300330;
+  border-radius: 3px;
+  width: auto;
+  cursor: pointer;
+  font-size: 18px;
+  transition-duration: 0.25s;
+}
+
+.btn:hover {
+  background-color: rgb(245, 247, 249);
+}
+
+.list {
+  max-width: 400px;
+  margin: auto;
+  padding: auto;
+}
